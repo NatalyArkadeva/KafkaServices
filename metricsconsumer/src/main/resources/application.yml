@@ -1,0 +1,25 @@
+server.port: 8080
+
+spring:
+  liquibase:
+    enabled: true
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5555/track_time
+    username: admin
+    password: admin
+    driverClassName: org.postgresql.Driver
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: metricsGroup
+      auto-offset-reset: earliest
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+logging:
+  file.path: ./logs

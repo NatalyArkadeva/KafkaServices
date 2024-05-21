@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 19-05-2024--003-create-disk-space-table
+      author: Nataly
+      changes:
+        - createTable:
+            tableName: disk_space
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar
+              - column:
+                  name: details_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_disk_space_details
+                    referencedTableName: details
+                    referencedColumnNames: id

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/19-05-2024--001-create-pings-table.yml
+  - include:
+      file: db/changelog/changeset/19-05-2024--002-create-details-table.yml
+  - include:
+      file: db/changelog/changeset/19-05-2024--003-create-disk-space-table.yml
+  - include:
+      file: db/changelog/changeset/19-05-2024--004-create-components-table.yml
+  - include:
+      file: db/changelog/changeset/19-05-2024--005-create-metrics-table.yml
+

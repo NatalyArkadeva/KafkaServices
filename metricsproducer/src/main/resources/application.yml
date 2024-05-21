@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+      group:
+        custom:
+          include: diskSpace, ping
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 19-05-2024--004-create-components-table
+      author: Nataly
+      changes:
+        - createTable:
+            tableName: components
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar
+              - column:
+                  name: disk_space_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_components_disk_space
+                    referencedTableName: disk_space
+                    referencedColumnNames: id
+              - column:
+                  name: pings_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_components_pings
+                    referencedTableName: pings
+                    referencedColumnNames: id

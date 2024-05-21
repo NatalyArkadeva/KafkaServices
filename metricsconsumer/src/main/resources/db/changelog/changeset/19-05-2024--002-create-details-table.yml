@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 19-05-2024--002-create-details-table
+      author: Nataly
+      changes:
+        - createTable:
+            tableName: details
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: total
+                  type: varchar
+              - column:
+                  name: free
+                  type: varchar
+              - column:
+                  name: threshold
+                  type: varchar
+              - column:
+                  name: path
+                  type: varchar
+              - column:
+                  name: exists
+                  type: boolean
